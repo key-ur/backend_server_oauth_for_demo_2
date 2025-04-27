@@ -3,6 +3,10 @@ const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
+console.log('CLIENT_ID:', process.env.CLIENT_ID);
+console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
+console.log('REDIRECT_URI:', process.env.REDIRECT_URI);
+
 const port = process.env.PORT || 3000;
 
 // Route to handle Google OAuth callback
