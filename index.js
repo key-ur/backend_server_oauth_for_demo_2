@@ -32,7 +32,8 @@ app.get("/callback", async (req, res) => {
     res.json({ access_token, refresh_token });
 
   } catch (error) {
-    console.error('Error exchanging code:', error);
+   // console.error('Error exchanging code:', error);
+    console.error('Error exchanging code:', error.response?.data || error.message);
     res.status(500).send('Error exchanging authorization code.');
   }
 });
