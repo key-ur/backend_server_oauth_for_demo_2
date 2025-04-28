@@ -15,6 +15,7 @@ app.get("/callback", async (req, res) => {
   const codeVerifier = req.query.code_verifier;
   console.log('code:', code);
   console.log('codeVerifier:', codeVerifier);
+  console.log('req:', req);
   if (!code || !codeVerifier) {
     return res.status(400).send('Missing code or code_verifier');
   }
