@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 // Route to handle Google OAuth callback
 app.get("/callback", async (req, res) => {
   const code = req.query.code; // The authorization code sent by Google
-  const codeVerifier = req.body.code_verifier;
+  const codeVerifier = req.query.code_verifier;
   
   if (!code || !codeVerifier) {
     return res.status(400).send('Missing code or code_verifier');
