@@ -14,7 +14,7 @@ app.get("/callback", async (req, res) => {
   const code = req.query.code; // The authorization code sent by Google
   const codeVerifier = req.body.code_verifier;
   
-  iif (!code || !codeVerifier) {
+  if (!code || !codeVerifier) {
     return res.status(400).send('Missing code or code_verifier');
   }
 
